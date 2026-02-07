@@ -1,0 +1,46 @@
+name: Subscriptions
+description: |-
+
+  APIs for Subscriptions Module
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/subscription/index
+    metadata:
+      groupName: Subscriptions
+      groupDescription: |-
+
+        APIs for Subscriptions Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get All Subscriptions'
+      description: 'This endpoint allows you to Get All Subscriptions .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

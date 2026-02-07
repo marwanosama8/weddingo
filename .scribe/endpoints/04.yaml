@@ -1,0 +1,357 @@
+name: Partner
+description: |-
+
+  APIs for PArtner Module
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/partner/show
+    metadata:
+      groupName: Partner
+      groupDescription: |-
+
+        APIs for PArtner Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show Specific Partner'
+      description: 'This endpoint allows you to get show specific partner by id .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      partner_id:
+        name: partner_id
+        description: .
+        required: true
+        example: officia
+        type: string
+        custom: []
+    cleanBodyParameters:
+      partner_id: officia
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/partner/store
+    metadata:
+      groupName: Partner
+      groupDescription: |-
+
+        APIs for PArtner Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store Partner'
+      description: 'This endpoint allows you to get store Partner .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      business_name:
+        name: business_name
+        description: ''
+        required: false
+        example: maiores
+        type: string
+        custom: []
+      category_id:
+        name: category_id
+        description: ''
+        required: false
+        example: ducimus
+        type: string
+        custom: []
+      other_categroy_id:
+        name: other_categroy_id
+        description: ''
+        required: false
+        example: incidunt
+        type: string
+        custom: []
+      social_provider:
+        name: social_provider
+        description: ''
+        required: false
+        example: quas
+        type: string
+        custom: []
+      social_url:
+        name: social_url
+        description: ''
+        required: false
+        example: 'http://www.feil.com/id-dolorem-voluptatum-tenetur-est-sequi-vel'
+        type: string
+        custom: []
+      business_type:
+        name: business_type
+        description: ''
+        required: false
+        example: quo
+        type: string
+        custom: []
+      about_us_survey:
+        name: about_us_survey
+        description: ''
+        required: false
+        example: placeat
+        type: string
+        custom: []
+      weekends:
+        name: weekends
+        description: ''
+        required: false
+        example: quaerat
+        type: string
+        custom: []
+      address_address:
+        name: address_address
+        description: ''
+        required: false
+        example: laborum
+        type: string
+        custom: []
+      bio:
+        name: bio
+        description: ''
+        required: false
+        example: corporis
+        type: string
+        custom: []
+      address_latitude:
+        name: address_latitude
+        description: ''
+        required: false
+        example: ut
+        type: string
+        custom: []
+      address_longitude:
+        name: address_longitude
+        description: ''
+        required: false
+        example: necessitatibus
+        type: string
+        custom: []
+    cleanBodyParameters:
+      business_name: maiores
+      category_id: ducimus
+      other_categroy_id: incidunt
+      social_provider: quas
+      social_url: 'http://www.feil.com/id-dolorem-voluptatum-tenetur-est-sequi-vel'
+      business_type: quo
+      about_us_survey: placeat
+      weekends: quaerat
+      address_address: laborum
+      bio: corporis
+      address_latitude: ut
+      address_longitude: necessitatibus
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/partner/update
+    metadata:
+      groupName: Partner
+      groupDescription: |-
+
+        APIs for PArtner Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Edit Partner'
+      description: 'This endpoint allows you to edit partner .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      business_name:
+        name: business_name
+        description: ''
+        required: true
+        example: expedita
+        type: string
+        custom: []
+      category_id:
+        name: category_id
+        description: ''
+        required: true
+        example: fugiat
+        type: string
+        custom: []
+      other_categroy_id:
+        name: other_categroy_id
+        description: ''
+        required: true
+        example: dolorem
+        type: string
+        custom: []
+      social_provider:
+        name: social_provider
+        description: ''
+        required: true
+        example: beatae
+        type: string
+        custom: []
+      social_url:
+        name: social_url
+        description: ''
+        required: true
+        example: 'http://www.oreilly.com/quae-dolorem-nihil-id-est-in-quis-et'
+        type: string
+        custom: []
+      business_type:
+        name: business_type
+        description: ''
+        required: true
+        example: occaecati
+        type: string
+        custom: []
+      about_us_survey:
+        name: about_us_survey
+        description: ''
+        required: true
+        example: beatae
+        type: string
+        custom: []
+      weekends:
+        name: weekends
+        description: ''
+        required: true
+        example: ratione
+        type: string
+        custom: []
+      address_address:
+        name: address_address
+        description: ''
+        required: true
+        example: vitae
+        type: string
+        custom: []
+      bio:
+        name: bio
+        description: ''
+        required: true
+        example: aut
+        type: string
+        custom: []
+      address_latitude:
+        name: address_latitude
+        description: ''
+        required: true
+        example: cum
+        type: string
+        custom: []
+      address_longitude:
+        name: address_longitude
+        description: ''
+        required: true
+        example: ab
+        type: string
+        custom: []
+    cleanBodyParameters:
+      business_name: expedita
+      category_id: fugiat
+      other_categroy_id: dolorem
+      social_provider: beatae
+      social_url: 'http://www.oreilly.com/quae-dolorem-nihil-id-est-in-quis-et'
+      business_type: occaecati
+      about_us_survey: beatae
+      weekends: ratione
+      address_address: vitae
+      bio: aut
+      address_latitude: cum
+      address_longitude: ab
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/partner/show-by-category
+    metadata:
+      groupName: Partner
+      groupDescription: |-
+
+        APIs for PArtner Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show Partners In Specific Category'
+      description: 'This endpoint allows you to get Show Partners In Specific Category, by distance if can.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      category_id:
+        name: category_id
+        description: .
+        required: true
+        example: vel
+        type: string
+        custom: []
+      latitude:
+        name: latitude
+        description: .
+        required: false
+        example: cupiditate
+        type: string
+        custom: []
+      longitude:
+        name: longitude
+        description: .
+        required: false
+        example: incidunt
+        type: string
+        custom: []
+    cleanBodyParameters:
+      category_id: vel
+      latitude: cupiditate
+      longitude: incidunt
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

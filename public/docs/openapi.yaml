@@ -1,0 +1,2235 @@
+openapi: 3.0.3
+info:
+  title: Smug
+  description: 'Start (and never finish) side projects with this API SMUG Application.'
+  version: 1.0.0
+servers:
+  -
+    url: 'http://smug.test'
+paths:
+  /api/advertisement/index:
+    get:
+      summary: 'All Advertisements'
+      operationId: allAdvertisements
+      description: 'This endpoint allows you to Partner show all Advertisements .'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Advertisement
+  /api/login:
+    post:
+      summary: Login
+      operationId: login
+      description: 'This endpoint allows you to login and get barear token .'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Auth '
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                phone:
+                  type: string
+                  description: 'The phone number.'
+                  example: "'010223123'"
+                password:
+                  type: string
+                  description: 'The password.'
+                  example: "'qwr@qwea'\n\n  @response {\n  \"token_type\": \"Bearer\",\n  \"fullname\": 'Marwan Osama',\n  \"username\": 'marwanosama',\n  \"country\": '1',\n  \"city\": '3',\n  \"phone\": '01233310',\n}"
+              required:
+                - phone
+                - password
+      security: []
+  /api/register:
+    post:
+      summary: Create
+      operationId: create
+      description: 'This endpoint allows you to create new user and get barear token .'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Auth '
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                phone:
+                  type: string
+                  description: 'The phone.'
+                  example: "'0123123'"
+                password:
+                  type: string
+                  description: 'The password.'
+                  example: "'qwr@qwea'"
+                fullname:
+                  type: string
+                  description: 'The full name.'
+                  example: "'John Doo'"
+                username:
+                  type: string
+                  description: 'The Username.'
+                  example: "'dohn_doo'"
+                image:
+                  type: string
+                  description: 'The image path.'
+                  example: "'file:///home/marwan/Pictures/WhatsApp_logo-color-vertical.svg.png'\n\n  @response {\n  \"token\": '1239801273987123089127-38901273',\n  \"user\": 'user data'\n}"
+              required:
+                - phone
+                - password
+                - fullname
+                - username
+      security: []
+  /api/social/login:
+    get:
+      summary: 'Social Login'
+      operationId: socialLogin
+      description: 'This endpoint allows you to login and get social login and get barear token .'
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Driver [est] not supported.'
+                  exception: InvalidArgumentException
+                  file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Support/Manager.php
+                  line: 109
+                  trace:
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Support/Manager.php
+                      line: 80
+                      function: createDriver
+                      class: Illuminate\Support\Manager
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php
+                      line: 338
+                      function: driver
+                      class: Illuminate\Support\Manager
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/app/Http/Controllers/Auth/AuthController.php
+                      line: 245
+                      function: __callStatic
+                      class: Illuminate\Support\Facades\Facade
+                      type: '::'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Controller.php
+                      line: 54
+                      function: socialLogin
+                      class: App\Http\Controllers\Auth\AuthController
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php
+                      line: 43
+                      function: callAction
+                      class: Illuminate\Routing\Controller
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Route.php
+                      line: 259
+                      function: dispatch
+                      class: Illuminate\Routing\ControllerDispatcher
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Route.php
+                      line: 205
+                      function: runController
+                      class: Illuminate\Routing\Route
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 798
+                      function: run
+                      class: Illuminate\Routing\Route
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 141
+                      function: 'Illuminate\Routing\{closure}'
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php
+                      line: 50
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Routing\Middleware\SubstituteBindings
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                      line: 126
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                      line: 92
+                      function: handleRequest
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                      line: 54
+                      function: handleRequestUsingNamedLimiter
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 116
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 797
+                      function: then
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 776
+                      function: runRouteWithinStack
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 740
+                      function: runRoute
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 729
+                      function: dispatchToRoute
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                      line: 190
+                      function: dispatch
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 141
+                      function: 'Illuminate\Foundation\Http\{closure}'
+                      class: Illuminate\Foundation\Http\Kernel
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/livewire/livewire/src/DisableBrowserCache.php
+                      line: 19
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Livewire\DisableBrowserCache
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
+                      line: 21
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php
+                      line: 31
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
+                      line: 21
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php
+                      line: 40
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\TrimStrings
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php
+                      line: 27
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\ValidatePostSize
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php
+                      line: 86
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php
+                      line: 62
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Http\Middleware\HandleCors
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php
+                      line: 39
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Http\Middleware\TrustProxies
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 116
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                      line: 165
+                      function: then
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                      line: 134
+                      function: sendRequestThroughRouter
+                      class: Illuminate\Foundation\Http\Kernel
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                      line: 299
+                      function: handle
+                      class: Illuminate\Foundation\Http\Kernel
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                      line: 287
+                      function: callLaravelOrLumenRoute
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                      line: 92
+                      function: makeApiCall
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                      line: 45
+                      function: makeResponseCall
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                      line: 35
+                      function: makeResponseCallIfConditionsPass
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                      line: 209
+                      function: __invoke
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                      line: 163
+                      function: iterateThroughStrategies
+                      class: Knuckles\Scribe\Extracting\Extractor
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                      line: 95
+                      function: fetchResponses
+                      class: Knuckles\Scribe\Extracting\Extractor
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                      line: 124
+                      function: processRoute
+                      class: Knuckles\Scribe\Extracting\Extractor
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                      line: 71
+                      function: extractEndpointsInfoFromLaravelApp
+                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                      line: 49
+                      function: extractEndpointsInfoAndWriteToDisk
+                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php
+                      line: 51
+                      function: get
+                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                      line: 36
+                      function: handle
+                      class: Knuckles\Scribe\Commands\GenerateDocumentation
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Container/Util.php
+                      line: 41
+                      function: 'Illuminate\Container\{closure}'
+                      class: Illuminate\Container\BoundMethod
+                      type: '::'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                      line: 93
+                      function: unwrapIfClosure
+                      class: Illuminate\Container\Util
+                      type: '::'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                      line: 35
+                      function: callBoundMethod
+                      class: Illuminate\Container\BoundMethod
+                      type: '::'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Container/Container.php
+                      line: 661
+                      function: call
+                      class: Illuminate\Container\BoundMethod
+                      type: '::'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Console/Command.php
+                      line: 183
+                      function: call
+                      class: Illuminate\Container\Container
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/symfony/console/Command/Command.php
+                      line: 312
+                      function: execute
+                      class: Illuminate\Console\Command
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Console/Command.php
+                      line: 152
+                      function: run
+                      class: Symfony\Component\Console\Command\Command
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/symfony/console/Application.php
+                      line: 1022
+                      function: run
+                      class: Illuminate\Console\Command
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/symfony/console/Application.php
+                      line: 314
+                      function: doRunCommand
+                      class: Symfony\Component\Console\Application
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/symfony/console/Application.php
+                      line: 168
+                      function: doRun
+                      class: Symfony\Component\Console\Application
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Console/Application.php
+                      line: 102
+                      function: run
+                      class: Symfony\Component\Console\Application
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php
+                      line: 155
+                      function: run
+                      class: Illuminate\Console\Application
+                      type: '->'
+                    -
+                      file: /home/marwan/Sites/smug/artisan
+                      line: 35
+                      function: handle
+                      class: Illuminate\Foundation\Console\Kernel
+                      type: '->'
+                properties:
+                  message:
+                    type: string
+                    example: 'Driver [est] not supported.'
+                  exception:
+                    type: string
+                    example: InvalidArgumentException
+                  file:
+                    type: string
+                    example: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Support/Manager.php
+                  line:
+                    type: integer
+                    example: 109
+                  trace:
+                    type: array
+                    example:
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Support/Manager.php
+                        line: 80
+                        function: createDriver
+                        class: Illuminate\Support\Manager
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php
+                        line: 338
+                        function: driver
+                        class: Illuminate\Support\Manager
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/app/Http/Controllers/Auth/AuthController.php
+                        line: 245
+                        function: __callStatic
+                        class: Illuminate\Support\Facades\Facade
+                        type: '::'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Controller.php
+                        line: 54
+                        function: socialLogin
+                        class: App\Http\Controllers\Auth\AuthController
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php
+                        line: 43
+                        function: callAction
+                        class: Illuminate\Routing\Controller
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Route.php
+                        line: 259
+                        function: dispatch
+                        class: Illuminate\Routing\ControllerDispatcher
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Route.php
+                        line: 205
+                        function: runController
+                        class: Illuminate\Routing\Route
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 798
+                        function: run
+                        class: Illuminate\Routing\Route
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 141
+                        function: 'Illuminate\Routing\{closure}'
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php
+                        line: 50
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Routing\Middleware\SubstituteBindings
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                        line: 126
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                        line: 92
+                        function: handleRequest
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                        line: 54
+                        function: handleRequestUsingNamedLimiter
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 116
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 797
+                        function: then
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 776
+                        function: runRouteWithinStack
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 740
+                        function: runRoute
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 729
+                        function: dispatchToRoute
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                        line: 190
+                        function: dispatch
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 141
+                        function: 'Illuminate\Foundation\Http\{closure}'
+                        class: Illuminate\Foundation\Http\Kernel
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/livewire/livewire/src/DisableBrowserCache.php
+                        line: 19
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Livewire\DisableBrowserCache
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
+                        line: 21
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php
+                        line: 31
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
+                        line: 21
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php
+                        line: 40
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\TrimStrings
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php
+                        line: 27
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\ValidatePostSize
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php
+                        line: 86
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php
+                        line: 62
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Http\Middleware\HandleCors
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php
+                        line: 39
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Http\Middleware\TrustProxies
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 116
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                        line: 165
+                        function: then
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                        line: 134
+                        function: sendRequestThroughRouter
+                        class: Illuminate\Foundation\Http\Kernel
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                        line: 299
+                        function: handle
+                        class: Illuminate\Foundation\Http\Kernel
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                        line: 287
+                        function: callLaravelOrLumenRoute
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                        line: 92
+                        function: makeApiCall
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                        line: 45
+                        function: makeResponseCall
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                        line: 35
+                        function: makeResponseCallIfConditionsPass
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                        line: 209
+                        function: __invoke
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                        line: 163
+                        function: iterateThroughStrategies
+                        class: Knuckles\Scribe\Extracting\Extractor
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                        line: 95
+                        function: fetchResponses
+                        class: Knuckles\Scribe\Extracting\Extractor
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                        line: 124
+                        function: processRoute
+                        class: Knuckles\Scribe\Extracting\Extractor
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                        line: 71
+                        function: extractEndpointsInfoFromLaravelApp
+                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                        line: 49
+                        function: extractEndpointsInfoAndWriteToDisk
+                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php
+                        line: 51
+                        function: get
+                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                        line: 36
+                        function: handle
+                        class: Knuckles\Scribe\Commands\GenerateDocumentation
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Container/Util.php
+                        line: 41
+                        function: 'Illuminate\Container\{closure}'
+                        class: Illuminate\Container\BoundMethod
+                        type: '::'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                        line: 93
+                        function: unwrapIfClosure
+                        class: Illuminate\Container\Util
+                        type: '::'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                        line: 35
+                        function: callBoundMethod
+                        class: Illuminate\Container\BoundMethod
+                        type: '::'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Container/Container.php
+                        line: 661
+                        function: call
+                        class: Illuminate\Container\BoundMethod
+                        type: '::'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Console/Command.php
+                        line: 183
+                        function: call
+                        class: Illuminate\Container\Container
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/symfony/console/Command/Command.php
+                        line: 312
+                        function: execute
+                        class: Illuminate\Console\Command
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Console/Command.php
+                        line: 152
+                        function: run
+                        class: Symfony\Component\Console\Command\Command
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/symfony/console/Application.php
+                        line: 1022
+                        function: run
+                        class: Illuminate\Console\Command
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/symfony/console/Application.php
+                        line: 314
+                        function: doRunCommand
+                        class: Symfony\Component\Console\Application
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/symfony/console/Application.php
+                        line: 168
+                        function: doRun
+                        class: Symfony\Component\Console\Application
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Console/Application.php
+                        line: 102
+                        function: run
+                        class: Symfony\Component\Console\Application
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php
+                        line: 155
+                        function: run
+                        class: Illuminate\Console\Application
+                        type: '->'
+                      -
+                        file: /home/marwan/Sites/smug/artisan
+                        line: 35
+                        function: handle
+                        class: Illuminate\Foundation\Console\Kernel
+                        type: '->'
+                    items:
+                      type: object
+                      properties:
+                        file:
+                          type: string
+                          example: /home/marwan/Sites/smug/vendor/laravel/framework/src/Illuminate/Support/Manager.php
+                        line:
+                          type: integer
+                          example: 80
+                        function:
+                          type: string
+                          example: createDriver
+                        class:
+                          type: string
+                          example: Illuminate\Support\Manager
+                        type:
+                          type: string
+                          example: '->'
+      tags:
+        - 'Auth '
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                provider_name:
+                  type: string
+                  description: .
+                  example: est
+                access_token:
+                  type: string
+                  description: ".\n\n  @response {\n  Data: {Data},\n}"
+                  example: quas
+              required:
+                - provider_name
+                - access_token
+      security: []
+  /api/logout:
+    post:
+      summary: logout
+      operationId: logout
+      description: 'This endpoint allows you to logout .'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Auth '
+  /api/user:
+    get:
+      summary: 'User And Partner Details'
+      operationId: userAndPartnerDetails
+      description: 'This endpoint allows you to get User And Partner Details.'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Blog
+  /api/user/update:
+    post:
+      summary: 'Edit User'
+      operationId: editUser
+      description: 'This endpoint allows you to get edit user  .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Blog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: ''
+                  example: molestias
+                last_name:
+                  type: string
+                  description: ''
+                  example: non
+                date_of_birth:
+                  type: string
+                  description: ''
+                  example: delectus
+                gender:
+                  type: string
+                  description: ''
+                  example: voluptate
+                image:
+                  type: string
+                  description: .
+                  example: qui
+                caption:
+                  type: string
+                  description: .
+                  example: ex
+              required:
+                - first_name
+                - last_name
+                - date_of_birth
+                - gender
+                - image
+                - caption
+  /api/user/update-token:
+    post:
+      summary: 'Edit User FCM Device Token'
+      operationId: editUserFCMDeviceToken
+      description: 'This endpoint allows you to get edit user  .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Blog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: .
+                  example: sequi
+              required:
+                - token
+  /api/blog/category:
+    post:
+      summary: 'Blogs In Specific Category'
+      operationId: blogsInSpecificCategory
+      description: 'This endpoint allows you to get all blogs .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Blog
+  /api/blog/store-gallery:
+    post:
+      summary: 'Store Blog'
+      operationId: storeBlog
+      description: 'This endpoint allows you to get store blogs .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Blog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  description: .
+                  example: tempore
+                caption:
+                  type: string
+                  description: .
+                  example: adipisci
+              required:
+                - image
+                - caption
+  /api/blog/show-gallery:
+    post:
+      summary: 'Show Partner Iamges Gallery Blog'
+      operationId: showPartnerIamgesGalleryBlog
+      description: 'This endpoint allows you to get image blogs .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Blog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                partner_id:
+                  type: integer
+                  description: .
+                  example: 6
+              required:
+                - partner_id
+  /api/blog/show-gallery-by-id:
+    post:
+      summary: 'Show Partner Iamges Gallery Blog By Id'
+      operationId: showPartnerIamgesGalleryBlogById
+      description: 'This endpoint allows you to get image blogs .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Blog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                galleryblog_id:
+                  type: string
+                  description: ''
+                  example: officia
+                partner_id:
+                  type: integer
+                  description: .
+                  example: 8
+              required:
+                - galleryblog_id
+                - partner_id
+  /api/blog/react:
+    post:
+      summary: 'React To Blog'
+      operationId: reactToBlog
+      description: 'This endpoint allows you to React .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Blog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                galleryblog_id:
+                  type: integer
+                  description: .
+                  example: 11
+                reaction_id:
+                  type: integer
+                  description: .
+                  example: 10
+              required:
+                - galleryblog_id
+                - reaction_id
+  /api/blog/comment:
+    post:
+      summary: 'Comment To Blog'
+      operationId: commentToBlog
+      description: 'This endpoint allows you to Comment .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Blog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                galleryblog_id:
+                  type: integer
+                  description: .
+                  example: 16
+                comment:
+                  type: string
+                  description: .
+                  example: aut
+              required:
+                - galleryblog_id
+                - comment
+  /api/blog/delete:
+    post:
+      summary: 'Delete To Blog'
+      operationId: deleteToBlog
+      description: 'This endpoint allows you to Delete Blog .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Blog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                blog_id:
+                  type: string
+                  description: .
+                  example: numquam
+              required:
+                - blog_id
+  /api/category:
+    get:
+      summary: 'All Categoryies'
+      operationId: allCategoryies
+      description: 'This endpoint allows you to get all categories .'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Categories
+  /api/chat/create-conversation:
+    post:
+      summary: 'Make Conversation'
+      operationId: makeConversation
+      description: 'This endpoint allows you to make conversations .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                partner_id:
+                  type: string
+                  description: .
+                  example: sint
+              required:
+                - partner_id
+  /api/chat/user-conversations:
+    get:
+      summary: 'User Conversation'
+      operationId: userConversation
+      description: 'This endpoint allows you to get user conversations .'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Chat
+  /api/chat/user-send:
+    post:
+      summary: 'User Sending Message'
+      operationId: userSendingMessage
+      description: 'This endpoint allows you to send message by user .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                conversation_id:
+                  type: string
+                  description: .
+                  example: veritatis
+                message:
+                  type: string
+                  description: .
+                  example: quidem
+              required:
+                - conversation_id
+                - message
+  /api/chat/conversation-by-id:
+    post:
+      summary: 'Get Conversation'
+      operationId: getConversation
+      description: 'This endpoint allows you to get conversation by id .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                conversation_id:
+                  type: string
+                  description: .
+                  example: facilis
+              required:
+                - conversation_id
+  /api/chat/partner-send:
+    post:
+      summary: 'Partner Sending Message'
+      operationId: partnerSendingMessage
+      description: 'This endpoint allows you to send message by partner .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                conversation_id:
+                  type: string
+                  description: .
+                  example: sed
+                partner_id:
+                  type: string
+                  description: .
+                  example: aliquam
+                message:
+                  type: string
+                  description: .
+                  example: enim
+              required:
+                - conversation_id
+                - partner_id
+                - message
+  /api/chat/parnter-conversation-by-id:
+    post:
+      summary: 'Get Partner Conversation By Id'
+      operationId: getPartnerConversationById
+      description: 'This endpoint allows you to get Partner Conversation By Id .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                conversation_id:
+                  type: string
+                  description: .
+                  example: quo
+              required:
+                - conversation_id
+  /api/chat/partner-conversations:
+    post:
+      summary: 'Get Partner Conversations'
+      operationId: getPartnerConversations
+      description: 'This endpoint allows you to get Partner Conversations .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Chat
+  /api/chat/get-conversation-unread-count:
+    post:
+      summary: 'Conversation Readed'
+      operationId: conversationReaded
+      description: 'This endpoint allows you to check if conversation readed .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                conversation_id:
+                  type: string
+                  description: .
+                  example: qui
+              required:
+                - conversation_id
+  /api/chat/user-send-media:
+    post:
+      summary: 'User Sending Attachment'
+      operationId: userSendingAttachment
+      description: 'This endpoint allows you to send attachment by user .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                conversation_id:
+                  type: string
+                  description: .
+                  example: aut
+                media:
+                  type: required
+                  description: .
+                  example: veritatis
+                type:
+                  type: string
+                  description: .
+                  example: cumque
+              required:
+                - conversation_id
+                - type
+  /api/chat/partner-send-media:
+    post:
+      summary: 'Partner Sending Attachment'
+      operationId: partnerSendingAttachment
+      description: 'This endpoint allows you to send attachment by partner .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                conversation_id:
+                  type: string
+                  description: .
+                  example: et
+                media:
+                  type: required
+                  description: .
+                  example: velit
+                type:
+                  type: string
+                  description: .
+                  example: enim
+              required:
+                - conversation_id
+                - type
+  /api/favorite:
+    get:
+      summary: 'Show all favorites'
+      operationId: showAllFavorites
+      description: 'This endpoint allows you to get all favorites .'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Favorite
+  /api/favorite/store:
+    post:
+      summary: 'Store Favorite'
+      operationId: storeFavorite
+      description: 'This endpoint allows you to get store blogs .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Favorite
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                partner_id:
+                  type: string
+                  description: .
+                  example: blanditiis
+              required:
+                - partner_id
+  /api/images/show:
+    post:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Image Manipulation'
+      security: []
+  /api/images/updateimage:
+    post:
+      summary: 'Update Image'
+      operationId: updateImage
+      description: 'This endpoint allows you to get update image .'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Image Manipulation'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  description: .
+                  example: et
+              required:
+                - image
+  /api/partner/show:
+    post:
+      summary: 'Show Specific Partner'
+      operationId: showSpecificPartner
+      description: 'This endpoint allows you to get show specific partner by id .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Partner
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                partner_id:
+                  type: string
+                  description: .
+                  example: officia
+              required:
+                - partner_id
+  /api/partner/store:
+    post:
+      summary: 'Store Partner'
+      operationId: storePartner
+      description: 'This endpoint allows you to get store Partner .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Partner
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                business_name:
+                  type: string
+                  description: ''
+                  example: maiores
+                category_id:
+                  type: string
+                  description: ''
+                  example: ducimus
+                other_categroy_id:
+                  type: string
+                  description: ''
+                  example: incidunt
+                social_provider:
+                  type: string
+                  description: ''
+                  example: quas
+                social_url:
+                  type: string
+                  description: ''
+                  example: 'http://www.feil.com/id-dolorem-voluptatum-tenetur-est-sequi-vel'
+                business_type:
+                  type: string
+                  description: ''
+                  example: quo
+                about_us_survey:
+                  type: string
+                  description: ''
+                  example: placeat
+                weekends:
+                  type: string
+                  description: ''
+                  example: quaerat
+                address_address:
+                  type: string
+                  description: ''
+                  example: laborum
+                bio:
+                  type: string
+                  description: ''
+                  example: corporis
+                address_latitude:
+                  type: string
+                  description: ''
+                  example: ut
+                address_longitude:
+                  type: string
+                  description: ''
+                  example: necessitatibus
+  /api/partner/update:
+    post:
+      summary: 'Edit Partner'
+      operationId: editPartner
+      description: 'This endpoint allows you to edit partner .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Partner
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                business_name:
+                  type: string
+                  description: ''
+                  example: expedita
+                category_id:
+                  type: string
+                  description: ''
+                  example: fugiat
+                other_categroy_id:
+                  type: string
+                  description: ''
+                  example: dolorem
+                social_provider:
+                  type: string
+                  description: ''
+                  example: beatae
+                social_url:
+                  type: string
+                  description: ''
+                  example: 'http://www.oreilly.com/quae-dolorem-nihil-id-est-in-quis-et'
+                business_type:
+                  type: string
+                  description: ''
+                  example: occaecati
+                about_us_survey:
+                  type: string
+                  description: ''
+                  example: beatae
+                weekends:
+                  type: string
+                  description: ''
+                  example: ratione
+                address_address:
+                  type: string
+                  description: ''
+                  example: vitae
+                bio:
+                  type: string
+                  description: ''
+                  example: aut
+                address_latitude:
+                  type: string
+                  description: ''
+                  example: cum
+                address_longitude:
+                  type: string
+                  description: ''
+                  example: ab
+              required:
+                - business_name
+                - category_id
+                - other_categroy_id
+                - social_provider
+                - social_url
+                - business_type
+                - about_us_survey
+                - weekends
+                - address_address
+                - bio
+                - address_latitude
+                - address_longitude
+  /api/partner/show-by-category:
+    post:
+      summary: 'Show Partners In Specific Category'
+      operationId: showPartnersInSpecificCategory
+      description: 'This endpoint allows you to get Show Partners In Specific Category, by distance if can.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Partner
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                category_id:
+                  type: string
+                  description: .
+                  example: vel
+                latitude:
+                  type: string
+                  description: .
+                  example: cupiditate
+                longitude:
+                  type: string
+                  description: .
+                  example: incidunt
+              required:
+                - category_id
+  /api/partner-pricelist/store:
+    post:
+      summary: 'Store PriceList'
+      operationId: storePriceList
+      description: 'This endpoint allows you to get store PriceList .'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Partner Price List'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                service:
+                  type: string
+                  description: .
+                  example: aut
+                price:
+                  type: string
+                  description: .
+                  example: rerum
+              required:
+                - service
+                - price
+  /api/partner-pricelist/show:
+    post:
+      summary: 'Show Partner PriceList'
+      operationId: showPartnerPriceList
+      description: 'This endpoint allows you to Show Partner PriceList .'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Partner Price List'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                partner_id:
+                  type: string
+                  description: .
+                  example: doloribus
+              required:
+                - partner_id
+  /api/partner-pricelist/edit:
+    post:
+      summary: 'Edit Pricelist'
+      operationId: editPricelist
+      description: 'This endpoint allows you to get edit pricelist .'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Partner Price List'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pricelist_id:
+                  type: string
+                  description: .
+                  example: voluptates
+                price:
+                  type: string
+                  description: .
+                  example: qui
+                service:
+                  type: string
+                  description: .
+                  example: quas
+              required:
+                - pricelist_id
+                - price
+                - service
+  /api/partner-pricelist/delete:
+    post:
+      summary: 'Delete Pricelist'
+      operationId: deletePricelist
+      description: 'This endpoint allows you to get delete pricelist .'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Partner Price List'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pricelist_id:
+                  type: string
+                  description: .
+                  example: rerum
+              required:
+                - pricelist_id
+  /api/subscription/request-subscription:
+    post:
+      summary: 'Make Request'
+      operationId: makeRequest
+      description: 'This endpoint allows you to Make Request to subscribtion .'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Point Exchange'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                subsciption_id:
+                  type: string
+                  description: .
+                  example: maiores
+                partner_id:
+                  type: string
+                  description: .
+                  example: aut
+              required:
+                - subsciption_id
+                - partner_id
+  /api/resservasion/user-resservasions:
+    get:
+      summary: 'Show User Resservasions'
+      operationId: showUserResservasions
+      description: 'This endpoint allows you to Show User Resservasions .'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Resservation
+  /api/resservasion/make-resservasion:
+    post:
+      summary: 'Make Resservasions'
+      operationId: makeResservasions
+      description: 'This endpoint allows you to get make resservasions .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Resservation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                partner_id:
+                  type: integer
+                  description: .
+                  example: 8
+                date_time:
+                  type: string
+                  description: .
+                  example: consectetur
+                services_id:
+                  type: integer
+                  description: .
+                  example: 3
+              required:
+                - partner_id
+                - date_time
+                - services_id
+  /api/resservasion/user-cancel:
+    post:
+      summary: 'Cancling Resservasions'
+      operationId: canclingResservasions
+      description: 'This endpoint allows you to Cancling Resservasions  .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Resservation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                resservasion_id:
+                  type: integer
+                  description: .
+                  example: 7
+                partner_id:
+                  type: integer
+                  description: .
+                  example: 4
+                user_id:
+                  type: string
+                  description: ''
+                  example: saepe
+              required:
+                - resservasion_id
+                - partner_id
+                - user_id
+  /api/resservasion/user-done:
+    post:
+      summary: 'User Done Resservasion'
+      operationId: userDoneResservasion
+      description: 'This endpoint allows you to make user done the resservastion  .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Resservation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                resservasion_id:
+                  type: integer
+                  description: .
+                  example: 13
+                partner_id:
+                  type: integer
+                  description: .
+                  example: 9
+                user_id:
+                  type: string
+                  description: ''
+                  example: sed
+              required:
+                - resservasion_id
+                - partner_id
+                - user_id
+  /api/resservasion/partner-resservasions:
+    get:
+      summary: 'Partner Resservasions'
+      operationId: partnerResservasions
+      description: 'This endpoint allows you to get Partner Resservasions .'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Resservation
+  /api/resservasion/partner-accept:
+    post:
+      summary: 'Partner Accept Resservasions'
+      operationId: partnerAcceptResservasions
+      description: 'This endpoint allows you to get Partner Accept Resservasions .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Resservation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                resservasion_id:
+                  type: integer
+                  description: .
+                  example: 11
+                partner_id:
+                  type: integer
+                  description: .
+                  example: 20
+                user_id:
+                  type: integer
+                  description: .
+                  example: 9
+              required:
+                - resservasion_id
+                - partner_id
+                - user_id
+  /api/resservasion/partner-refuse:
+    post:
+      summary: 'Partner Refuse Resservasion'
+      operationId: partnerRefuseResservasion
+      description: 'This endpoint allows you to Partner Refuse Resservasion .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Resservation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                resservasion_id:
+                  type: integer
+                  description: .
+                  example: 5
+                partner_id:
+                  type: integer
+                  description: .
+                  example: 14
+                user_id:
+                  type: integer
+                  description: .
+                  example: 12
+              required:
+                - resservasion_id
+                - partner_id
+                - user_id
+  /api/reviews/count:
+    post:
+      summary: 'Get Partner Reviews Count'
+      operationId: getPartnerReviewsCount
+      description: 'This endpoint allows you to Get Partner Reviews Count  .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Review
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                partner_id:
+                  type: integer
+                  description: .
+                  example: 8
+              required:
+                - partner_id
+  /api/reviews/all-reviews:
+    post:
+      summary: 'Get Partner Review And Comments'
+      operationId: getPartnerReviewAndComments
+      description: 'This endpoint allows you to Get Partner Review And Comments .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Review
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                partner_id:
+                  type: integer
+                  description: .
+                  example: 17
+              required:
+                - partner_id
+  /api/reviews/store:
+    post:
+      summary: 'Store Review'
+      operationId: storeReview
+      description: 'This endpoint allows you to store review .'
+      parameters: []
+      responses: {  }
+      tags:
+        - Review
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                partner_id:
+                  type: stringinteger
+                  description: .
+                  example: fuga
+                review:
+                  type: string
+                  description: .
+                  example: doloremque
+                rate:
+                  type: string
+                  description: .
+                  example: ut
+              required:
+                - partner_id
+                - review
+                - rate
+  /api/subscription/index:
+    get:
+      summary: 'Get All Subscriptions'
+      operationId: getAllSubscriptions
+      description: 'This endpoint allows you to Get All Subscriptions .'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Subscriptions
+tags:
+  -
+    name: Advertisement
+    description: "\nAPIs for Advertisement Module"
+  -
+    name: 'Auth '
+    description: "\nAPIs for authantiucation"
+  -
+    name: Blog
+    description: "\nAPIs for Blog Module"
+  -
+    name: Categories
+    description: "\nAPIs for Category Module"
+  -
+    name: Chat
+    description: "\nAPIs for Chat Module"
+  -
+    name: Favorite
+    description: "\nAPIs for Favorite Module"
+  -
+    name: 'Image Manipulation'
+    description: "\nAPIs for Image Module"
+  -
+    name: Partner
+    description: "\nAPIs for PArtner Module"
+  -
+    name: 'Partner Price List'
+    description: "\nAPIs for Partner Price List Module"
+  -
+    name: 'Point Exchange'
+    description: "\nAPIs for Point Exchange Module"
+  -
+    name: Resservation
+    description: "\nAPIs for Resservation Module"
+  -
+    name: Review
+    description: "\nAPIs for Review Module"
+  -
+    name: Subscriptions
+    description: "\nAPIs for Subscriptions Module"

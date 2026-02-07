@@ -1,0 +1,470 @@
+name: Blog
+description: |-
+
+  APIs for Blog Module
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/user
+    metadata:
+      groupName: Blog
+      groupDescription: |-
+
+        APIs for Blog Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'User And Partner Details'
+      description: 'This endpoint allows you to get User And Partner Details.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/user/update
+    metadata:
+      groupName: Blog
+      groupDescription: |-
+
+        APIs for Blog Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Edit User'
+      description: 'This endpoint allows you to get edit user  .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      first_name:
+        name: first_name
+        description: ''
+        required: true
+        example: molestias
+        type: string
+        custom: []
+      last_name:
+        name: last_name
+        description: ''
+        required: true
+        example: non
+        type: string
+        custom: []
+      date_of_birth:
+        name: date_of_birth
+        description: ''
+        required: true
+        example: delectus
+        type: string
+        custom: []
+      gender:
+        name: gender
+        description: ''
+        required: true
+        example: voluptate
+        type: string
+        custom: []
+      image:
+        name: image
+        description: .
+        required: true
+        example: qui
+        type: string
+        custom: []
+      caption:
+        name: caption
+        description: .
+        required: true
+        example: ex
+        type: string
+        custom: []
+    cleanBodyParameters:
+      first_name: molestias
+      last_name: non
+      date_of_birth: delectus
+      gender: voluptate
+      image: qui
+      caption: ex
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/user/update-token
+    metadata:
+      groupName: Blog
+      groupDescription: |-
+
+        APIs for Blog Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Edit User FCM Device Token'
+      description: 'This endpoint allows you to get edit user  .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      token:
+        name: token
+        description: .
+        required: true
+        example: sequi
+        type: string
+        custom: []
+    cleanBodyParameters:
+      token: sequi
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/blog/category
+    metadata:
+      groupName: Blog
+      groupDescription: |-
+
+        APIs for Blog Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Blogs In Specific Category'
+      description: 'This endpoint allows you to get all blogs .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/blog/store-gallery
+    metadata:
+      groupName: Blog
+      groupDescription: |-
+
+        APIs for Blog Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store Blog'
+      description: 'This endpoint allows you to get store blogs .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      image:
+        name: image
+        description: .
+        required: true
+        example: tempore
+        type: string
+        custom: []
+      caption:
+        name: caption
+        description: .
+        required: true
+        example: adipisci
+        type: string
+        custom: []
+    cleanBodyParameters:
+      image: tempore
+      caption: adipisci
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/blog/show-gallery
+    metadata:
+      groupName: Blog
+      groupDescription: |-
+
+        APIs for Blog Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show Partner Iamges Gallery Blog'
+      description: 'This endpoint allows you to get image blogs .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      partner_id:
+        name: partner_id
+        description: .
+        required: true
+        example: 6
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      partner_id: 6
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/blog/show-gallery-by-id
+    metadata:
+      groupName: Blog
+      groupDescription: |-
+
+        APIs for Blog Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show Partner Iamges Gallery Blog By Id'
+      description: 'This endpoint allows you to get image blogs .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      galleryblog_id:
+        name: galleryblog_id
+        description: ''
+        required: true
+        example: officia
+        type: string
+        custom: []
+      partner_id:
+        name: partner_id
+        description: .
+        required: true
+        example: 8
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      galleryblog_id: officia
+      partner_id: 8
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/blog/react
+    metadata:
+      groupName: Blog
+      groupDescription: |-
+
+        APIs for Blog Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'React To Blog'
+      description: 'This endpoint allows you to React .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      galleryblog_id:
+        name: galleryblog_id
+        description: .
+        required: true
+        example: 11
+        type: integer
+        custom: []
+      reaction_id:
+        name: reaction_id
+        description: .
+        required: true
+        example: 10
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      galleryblog_id: 11
+      reaction_id: 10
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/blog/comment
+    metadata:
+      groupName: Blog
+      groupDescription: |-
+
+        APIs for Blog Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Comment To Blog'
+      description: 'This endpoint allows you to Comment .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      galleryblog_id:
+        name: galleryblog_id
+        description: .
+        required: true
+        example: 16
+        type: integer
+        custom: []
+      comment:
+        name: comment
+        description: .
+        required: true
+        example: aut
+        type: string
+        custom: []
+    cleanBodyParameters:
+      galleryblog_id: 16
+      comment: aut
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/blog/delete
+    metadata:
+      groupName: Blog
+      groupDescription: |-
+
+        APIs for Blog Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete To Blog'
+      description: 'This endpoint allows you to Delete Blog .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      blog_id:
+        name: blog_id
+        description: .
+        required: true
+        example: numquam
+        type: string
+        custom: []
+    cleanBodyParameters:
+      blog_id: numquam
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

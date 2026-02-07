@@ -1,0 +1,141 @@
+name: Review
+description: |-
+
+  APIs for Review Module
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/reviews/count
+    metadata:
+      groupName: Review
+      groupDescription: |-
+
+        APIs for Review Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Partner Reviews Count'
+      description: 'This endpoint allows you to Get Partner Reviews Count  .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      partner_id:
+        name: partner_id
+        description: .
+        required: true
+        example: 8
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      partner_id: 8
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/reviews/all-reviews
+    metadata:
+      groupName: Review
+      groupDescription: |-
+
+        APIs for Review Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Partner Review And Comments'
+      description: 'This endpoint allows you to Get Partner Review And Comments .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      partner_id:
+        name: partner_id
+        description: .
+        required: true
+        example: 17
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      partner_id: 17
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/reviews/store
+    metadata:
+      groupName: Review
+      groupDescription: |-
+
+        APIs for Review Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store Review'
+      description: 'This endpoint allows you to store review .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      partner_id:
+        name: partner_id
+        description: .
+        required: true
+        example: fuga
+        type: stringinteger
+        custom: []
+      review:
+        name: review
+        description: .
+        required: true
+        example: doloremque
+        type: string
+        custom: []
+      rate:
+        name: rate
+        description: .
+        required: true
+        example: ut
+        type: string
+        custom: []
+    cleanBodyParameters:
+      partner_id: fuga
+      review: doloremque
+      rate: ut
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

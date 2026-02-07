@@ -1,0 +1,1664 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/smug.test"
+        }
+    ],
+    "info": {
+        "name": "Smug",
+        "_postman_id": "d10f55e7-505b-4d0a-9660-9796af6c84ad",
+        "description": "Start (and never finish) side projects with this API SMUG Application.",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Advertisement",
+            "description": "\nAPIs for Advertisement Module",
+            "item": [
+                {
+                    "name": "All Advertisements",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/advertisement\/index",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/advertisement\/index"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to Partner show all Advertisements ."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Auth ",
+            "description": "\nAPIs for authantiucation",
+            "item": [
+                {
+                    "name": "Login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"phone\":\"'010223123'\",\"password\":\"'qwr@qwea'\\n\\n  @response {\\n  \\\"token_type\\\": \\\"Bearer\\\",\\n  \\\"fullname\\\": 'Marwan Osama',\\n  \\\"username\\\": 'marwanosama',\\n  \\\"country\\\": '1',\\n  \\\"city\\\": '3',\\n  \\\"phone\\\": '01233310',\\n}\"}"
+                        },
+                        "description": "This endpoint allows you to login and get barear token .",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"phone\":\"'0123123'\",\"password\":\"'qwr@qwea'\",\"fullname\":\"'John Doo'\",\"username\":\"'dohn_doo'\",\"image\":\"'file:\\\/\\\/\\\/home\\\/marwan\\\/Pictures\\\/WhatsApp_logo-color-vertical.svg.png'\\n\\n  @response {\\n  \\\"token\\\": '1239801273987123089127-38901273',\\n  \\\"user\\\": 'user data'\\n}\"}"
+                        },
+                        "description": "This endpoint allows you to create new user and get barear token .",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Social Login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/social\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/social\/login"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"provider_name\":\"est\",\"access_token\":\"quas\"}"
+                        },
+                        "description": "This endpoint allows you to login and get social login and get barear token .",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Driver [est] not supported.\",\n    \"exception\": \"InvalidArgumentException\",\n    \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Support\/Manager.php\",\n    \"line\": 109,\n    \"trace\": [\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Support\/Manager.php\",\n            \"line\": 80,\n            \"function\": \"createDriver\",\n            \"class\": \"Illuminate\\\\Support\\\\Manager\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Support\/Facades\/Facade.php\",\n            \"line\": 338,\n            \"function\": \"driver\",\n            \"class\": \"Illuminate\\\\Support\\\\Manager\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/app\/Http\/Controllers\/Auth\/AuthController.php\",\n            \"line\": 245,\n            \"function\": \"__callStatic\",\n            \"class\": \"Illuminate\\\\Support\\\\Facades\\\\Facade\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Controller.php\",\n            \"line\": 54,\n            \"function\": \"socialLogin\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\Auth\\\\AuthController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php\",\n            \"line\": 43,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php\",\n            \"line\": 259,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php\",\n            \"line\": 205,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php\",\n            \"line\": 798,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 141,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php\",\n            \"line\": 126,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php\",\n            \"line\": 92,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php\",\n            \"line\": 54,\n            \"function\": \"handleRequestUsingNamedLimiter\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 116,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php\",\n            \"line\": 797,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php\",\n            \"line\": 776,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php\",\n            \"line\": 740,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php\",\n            \"line\": 729,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php\",\n            \"line\": 190,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 141,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/livewire\/livewire\/src\/DisableBrowserCache.php\",\n            \"line\": 19,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Livewire\\\\DisableBrowserCache\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/PreventRequestsDuringMaintenance.php\",\n            \"line\": 86,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Http\/Middleware\/HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Http\/Middleware\/TrustProxies.php\",\n            \"line\": 39,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 116,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php\",\n            \"line\": 165,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php\",\n            \"line\": 134,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php\",\n            \"line\": 299,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php\",\n            \"line\": 287,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php\",\n            \"line\": 92,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php\",\n            \"line\": 45,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php\",\n            \"line\": 35,\n            \"function\": \"makeResponseCallIfConditionsPass\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Extractor.php\",\n            \"line\": 209,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Extractor.php\",\n            \"line\": 163,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Extractor.php\",\n            \"line\": 95,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/knuckleswtf\/scribe\/src\/GroupedEndpoints\/GroupedEndpointsFromApp.php\",\n            \"line\": 124,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/knuckleswtf\/scribe\/src\/GroupedEndpoints\/GroupedEndpointsFromApp.php\",\n            \"line\": 71,\n            \"function\": \"extractEndpointsInfoFromLaravelApp\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/knuckleswtf\/scribe\/src\/GroupedEndpoints\/GroupedEndpointsFromApp.php\",\n            \"line\": 49,\n            \"function\": \"extractEndpointsInfoAndWriteToDisk\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/knuckleswtf\/scribe\/src\/Commands\/GenerateDocumentation.php\",\n            \"line\": 51,\n            \"function\": \"get\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/Util.php\",\n            \"line\": 41,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php\",\n            \"line\": 35,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/Container.php\",\n            \"line\": 661,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php\",\n            \"line\": 183,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/symfony\/console\/Command\/Command.php\",\n            \"line\": 312,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php\",\n            \"line\": 152,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/symfony\/console\/Application.php\",\n            \"line\": 1022,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/symfony\/console\/Application.php\",\n            \"line\": 314,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/symfony\/console\/Application.php\",\n            \"line\": 168,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Application.php\",\n            \"line\": 102,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Console\/Kernel.php\",\n            \"line\": 155,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/marwan\/Sites\/smug\/artisan\",\n            \"line\": 35,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "logout",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to logout ."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Blog",
+            "description": "\nAPIs for Blog Module",
+            "item": [
+                {
+                    "name": "User And Partner Details",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to get User And Partner Details."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Edit User",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"first_name\":\"molestias\",\"last_name\":\"non\",\"date_of_birth\":\"delectus\",\"gender\":\"voluptate\",\"image\":\"qui\",\"caption\":\"ex\"}"
+                        },
+                        "description": "This endpoint allows you to get edit user  ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Edit User FCM Device Token",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user\/update-token",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user\/update-token"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"token\":\"sequi\"}"
+                        },
+                        "description": "This endpoint allows you to get edit user  ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Blogs In Specific Category",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/blog\/category",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/blog\/category"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to get all blogs ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store Blog",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/blog\/store-gallery",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/blog\/store-gallery"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"image\":\"tempore\",\"caption\":\"adipisci\"}"
+                        },
+                        "description": "This endpoint allows you to get store blogs ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Show Partner Iamges Gallery Blog",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/blog\/show-gallery",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/blog\/show-gallery"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"partner_id\":6}"
+                        },
+                        "description": "This endpoint allows you to get image blogs ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Show Partner Iamges Gallery Blog By Id",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/blog\/show-gallery-by-id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/blog\/show-gallery-by-id"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"galleryblog_id\":\"officia\",\"partner_id\":8}"
+                        },
+                        "description": "This endpoint allows you to get image blogs ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "React To Blog",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/blog\/react",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/blog\/react"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"galleryblog_id\":11,\"reaction_id\":10}"
+                        },
+                        "description": "This endpoint allows you to React ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Comment To Blog",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/blog\/comment",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/blog\/comment"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"galleryblog_id\":16,\"comment\":\"aut\"}"
+                        },
+                        "description": "This endpoint allows you to Comment ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete To Blog",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/blog\/delete",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/blog\/delete"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"blog_id\":\"numquam\"}"
+                        },
+                        "description": "This endpoint allows you to Delete Blog ."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Categories",
+            "description": "\nAPIs for Category Module",
+            "item": [
+                {
+                    "name": "All Categoryies",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/category",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/category"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to get all categories ."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Chat",
+            "description": "\nAPIs for Chat Module",
+            "item": [
+                {
+                    "name": "Make Conversation",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/chat\/create-conversation",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/chat\/create-conversation"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"partner_id\":\"sint\"}"
+                        },
+                        "description": "This endpoint allows you to make conversations ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "User Conversation",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/chat\/user-conversations",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/chat\/user-conversations"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to get user conversations ."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "User Sending Message",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/chat\/user-send",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/chat\/user-send"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"conversation_id\":\"veritatis\",\"message\":\"quidem\"}"
+                        },
+                        "description": "This endpoint allows you to send message by user ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Conversation",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/chat\/conversation-by-id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/chat\/conversation-by-id"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"conversation_id\":\"facilis\"}"
+                        },
+                        "description": "This endpoint allows you to get conversation by id ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Partner Sending Message",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/chat\/partner-send",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/chat\/partner-send"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"conversation_id\":\"sed\",\"partner_id\":\"aliquam\",\"message\":\"enim\"}"
+                        },
+                        "description": "This endpoint allows you to send message by partner ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Partner Conversation By Id",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/chat\/parnter-conversation-by-id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/chat\/parnter-conversation-by-id"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"conversation_id\":\"quo\"}"
+                        },
+                        "description": "This endpoint allows you to get Partner Conversation By Id ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Partner Conversations",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/chat\/partner-conversations",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/chat\/partner-conversations"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to get Partner Conversations ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Conversation Readed",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/chat\/get-conversation-unread-count",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/chat\/get-conversation-unread-count"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"conversation_id\":\"qui\"}"
+                        },
+                        "description": "This endpoint allows you to check if conversation readed ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "User Sending Attachment",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/chat\/user-send-media",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/chat\/user-send-media"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"conversation_id\":\"aut\",\"media\":\"veritatis\",\"type\":\"cumque\"}"
+                        },
+                        "description": "This endpoint allows you to send attachment by user ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Partner Sending Attachment",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/chat\/partner-send-media",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/chat\/partner-send-media"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"conversation_id\":\"et\",\"media\":\"velit\",\"type\":\"enim\"}"
+                        },
+                        "description": "This endpoint allows you to send attachment by partner ."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Favorite",
+            "description": "\nAPIs for Favorite Module",
+            "item": [
+                {
+                    "name": "Show all favorites",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/favorite",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/favorite"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to get all favorites ."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store Favorite",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/favorite\/store",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/favorite\/store"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"partner_id\":\"blanditiis\"}"
+                        },
+                        "description": "This endpoint allows you to get store blogs ."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Image Manipulation",
+            "description": "\nAPIs for Image Module",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/images\/show",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/images\/show"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Image",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/images\/updateimage",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/images\/updateimage"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"image\":\"et\"}"
+                        },
+                        "description": "This endpoint allows you to get update image ."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Partner",
+            "description": "\nAPIs for PArtner Module",
+            "item": [
+                {
+                    "name": "Show Specific Partner",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/partner\/show",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/partner\/show"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"partner_id\":\"officia\"}"
+                        },
+                        "description": "This endpoint allows you to get show specific partner by id ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store Partner",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/partner\/store",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/partner\/store"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"business_name\":\"maiores\",\"category_id\":\"ducimus\",\"other_categroy_id\":\"incidunt\",\"social_provider\":\"quas\",\"social_url\":\"http:\\\/\\\/www.feil.com\\\/id-dolorem-voluptatum-tenetur-est-sequi-vel\",\"business_type\":\"quo\",\"about_us_survey\":\"placeat\",\"weekends\":\"quaerat\",\"address_address\":\"laborum\",\"bio\":\"corporis\",\"address_latitude\":\"ut\",\"address_longitude\":\"necessitatibus\"}"
+                        },
+                        "description": "This endpoint allows you to get store Partner ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Edit Partner",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/partner\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/partner\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"business_name\":\"expedita\",\"category_id\":\"fugiat\",\"other_categroy_id\":\"dolorem\",\"social_provider\":\"beatae\",\"social_url\":\"http:\\\/\\\/www.oreilly.com\\\/quae-dolorem-nihil-id-est-in-quis-et\",\"business_type\":\"occaecati\",\"about_us_survey\":\"beatae\",\"weekends\":\"ratione\",\"address_address\":\"vitae\",\"bio\":\"aut\",\"address_latitude\":\"cum\",\"address_longitude\":\"ab\"}"
+                        },
+                        "description": "This endpoint allows you to edit partner ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Show Partners In Specific Category",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/partner\/show-by-category",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/partner\/show-by-category"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"category_id\":\"vel\",\"latitude\":\"cupiditate\",\"longitude\":\"incidunt\"}"
+                        },
+                        "description": "This endpoint allows you to get Show Partners In Specific Category, by distance if can."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Partner Price List",
+            "description": "\nAPIs for Partner Price List Module",
+            "item": [
+                {
+                    "name": "Store PriceList",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/partner-pricelist\/store",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/partner-pricelist\/store"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"service\":\"aut\",\"price\":\"rerum\"}"
+                        },
+                        "description": "This endpoint allows you to get store PriceList ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Show Partner PriceList",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/partner-pricelist\/show",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/partner-pricelist\/show"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"partner_id\":\"doloribus\"}"
+                        },
+                        "description": "This endpoint allows you to Show Partner PriceList ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Edit Pricelist",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/partner-pricelist\/edit",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/partner-pricelist\/edit"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"pricelist_id\":\"voluptates\",\"price\":\"qui\",\"service\":\"quas\"}"
+                        },
+                        "description": "This endpoint allows you to get edit pricelist ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Pricelist",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/partner-pricelist\/delete",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/partner-pricelist\/delete"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"pricelist_id\":\"rerum\"}"
+                        },
+                        "description": "This endpoint allows you to get delete pricelist ."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Point Exchange",
+            "description": "\nAPIs for Point Exchange Module",
+            "item": [
+                {
+                    "name": "Make Request",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/subscription\/request-subscription",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/subscription\/request-subscription"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"subsciption_id\":\"maiores\",\"partner_id\":\"aut\"}"
+                        },
+                        "description": "This endpoint allows you to Make Request to subscribtion ."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Resservation",
+            "description": "\nAPIs for Resservation Module",
+            "item": [
+                {
+                    "name": "Show User Resservasions",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/resservasion\/user-resservasions",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/resservasion\/user-resservasions"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to Show User Resservasions ."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Make Resservasions",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/resservasion\/make-resservasion",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/resservasion\/make-resservasion"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"partner_id\":8,\"date_time\":\"consectetur\",\"services_id\":3}"
+                        },
+                        "description": "This endpoint allows you to get make resservasions ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Cancling Resservasions",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/resservasion\/user-cancel",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/resservasion\/user-cancel"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"resservasion_id\":7,\"partner_id\":4,\"user_id\":\"saepe\"}"
+                        },
+                        "description": "This endpoint allows you to Cancling Resservasions  ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "User Done Resservasion",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/resservasion\/user-done",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/resservasion\/user-done"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"resservasion_id\":13,\"partner_id\":9,\"user_id\":\"sed\"}"
+                        },
+                        "description": "This endpoint allows you to make user done the resservastion  ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Partner Resservasions",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/resservasion\/partner-resservasions",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/resservasion\/partner-resservasions"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to get Partner Resservasions ."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Partner Accept Resservasions",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/resservasion\/partner-accept",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/resservasion\/partner-accept"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"resservasion_id\":11,\"partner_id\":20,\"user_id\":9}"
+                        },
+                        "description": "This endpoint allows you to get Partner Accept Resservasions ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Partner Refuse Resservasion",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/resservasion\/partner-refuse",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/resservasion\/partner-refuse"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"resservasion_id\":5,\"partner_id\":14,\"user_id\":12}"
+                        },
+                        "description": "This endpoint allows you to Partner Refuse Resservasion ."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Review",
+            "description": "\nAPIs for Review Module",
+            "item": [
+                {
+                    "name": "Get Partner Reviews Count",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/reviews\/count",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/reviews\/count"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"partner_id\":8}"
+                        },
+                        "description": "This endpoint allows you to Get Partner Reviews Count  ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Partner Review And Comments",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/reviews\/all-reviews",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/reviews\/all-reviews"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"partner_id\":17}"
+                        },
+                        "description": "This endpoint allows you to Get Partner Review And Comments ."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store Review",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/reviews\/store",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/reviews\/store"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"partner_id\":\"fuga\",\"review\":\"doloremque\",\"rate\":\"ut\"}"
+                        },
+                        "description": "This endpoint allows you to store review ."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Subscriptions",
+            "description": "\nAPIs for Subscriptions Module",
+            "item": [
+                {
+                    "name": "Get All Subscriptions",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/subscription\/index",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/subscription\/index"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to Get All Subscriptions ."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

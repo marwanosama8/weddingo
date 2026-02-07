@@ -1,0 +1,77 @@
+name: 'Image Manipulation'
+description: |-
+
+  APIs for Image Module
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/images/show
+    metadata:
+      groupName: 'Image Manipulation'
+      groupDescription: |-
+
+        APIs for Image Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/images/updateimage
+    metadata:
+      groupName: 'Image Manipulation'
+      groupDescription: |-
+
+        APIs for Image Module
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Image'
+      description: 'This endpoint allows you to get update image .'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      image:
+        name: image
+        description: .
+        required: true
+        example: et
+        type: string
+        custom: []
+    cleanBodyParameters:
+      image: et
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
