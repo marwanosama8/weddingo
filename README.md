@@ -1,3 +1,6 @@
+![Weddingo Overview](public/weddingo.jpg)
+
+
 # weddingo
 
 **weddingo** is a portfolio-first backend project built with Laravel, designed as a wedding services marketplace API that connects couples with professional service providers for their wedding day.
